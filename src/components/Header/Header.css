@@ -1,0 +1,8 @@
+.head-cont button{
+    background-color: blue;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    font-weight: bold;
+}

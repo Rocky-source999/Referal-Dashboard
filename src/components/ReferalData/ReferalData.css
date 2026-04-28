@@ -1,0 +1,49 @@
+table {
+    padding-left: 150px;
+    border-collapse: separate;
+    border-spacing: 0 20px;
+    width: 90%;
+    table-layout: fixed;
+}
+thead{
+    background-color: blue;
+    height: 50px;
+    color: #fff;
+}
+th tr{
+    border-radius: 10px;
+}
+th, td{
+    text-align: left;
+}
+tr th{
+    font-size: 20px;
+}
+td{
+    color: gray;
+    font-weight: 600;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 24px;
+  padding-right: 20px;
+  flex-wrap: wrap;
+  color: blue;
+  gap: 25px;
+}
+.numbers{
+    font-size: 20px;
+}
+.page-button {
+  padding: 8px 14px;
+  border: 1px solid blue;
+  border-radius: 6px;
+  background: white;
+  font-size: 23px;
+  color: blue;
+  /* color: #4b5563; */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
