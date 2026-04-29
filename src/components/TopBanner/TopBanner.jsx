@@ -1,21 +1,25 @@
 import { FaSearch } from "react-icons/fa"
 import { IoMdNotificationsOutline } from "react-icons/io"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "./TopBanner.css"
 
 const TopBanner = ({ searchinput, userinput }) => {
+  const inputRef = useState(null)
+  useEffect(() => {
+    inputRef.current.focus()
+  }, [])
 
   return (
     <div className="flex items-center justify-between mt-4 px-6">
       <div className="flex gap-36">
         <h1 className="font-bold text-2xl text-gray-500">Referal Dashboard</h1>
         <div className="search-cont flex items-center gap-1">
-          <FaSearch className="h-6 w-6 text-blue-800 stroke-3"/>
-          <input type="search" placeholder="search here..." value={userinput} onChange={searchinput}/>
+          <FaSearch className="icon h-6 w-6 text-blue-800 stroke-3 hover:scale-110"/>
+          <input type="search" placeholder="search here..." ref={inputRef} value={userinput} onChange={searchinput}/>
         </div>
       </div>
       <div className="flex items-center gap-5">
-        <button className="text-white bg-blue-600 px-8 py-2 rounded-lg text-xl font-bold">Search</button>
+        <button className="text-white bg-blue-600 px-8 py-2 rounded-lg text-xl font-bold hover:scale-105">Search</button>
         <IoMdNotificationsOutline className="h-6 w-6"/>
         <div className="flex">
             <img src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg" alt="man" className="h-10 w-10"/>
@@ -24,6 +28,7 @@ const TopBanner = ({ searchinput, userinput }) => {
                 <select>
                     <option>Admin</option>
                     <option>Student</option>
+                    <option>Log Out</option>
                 </select>
             </div>
         </div>

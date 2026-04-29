@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react'
 import "./ReferalData.css"
 
 const ReferalData = ({ data, currentPage, setCurrentPage, totalPages }) => {
