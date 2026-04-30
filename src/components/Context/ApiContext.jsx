@@ -12,7 +12,6 @@ export default function ApiContext({ children }) {
     const fetchData = async () => {
         const response = await fetch("https://nxtwave-assessments-backend-nxtwave-media-static.s3-ap-south-1.amazonaws.com/topin_beta/media/content_loading/uploads/d4457a9c-6134-46a5-b31c-60ad13a3e2f6_userData.json");
         const result = await response.json();
-        setData(result);
         const names = [
         "Rahul", "Amit", "Sneha", "Priya", "Arjun",
         "Kiran", "Ravi", "Neha", "Vikram", "Anjali",
@@ -30,6 +29,7 @@ export default function ApiContext({ children }) {
     };
     fetchData();
   }, []);
+  
   return (
     <ApiContextData.Provider value={data}>
       {children}
