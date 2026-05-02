@@ -1,7 +1,6 @@
 import Banner from '../Banner/Banner'
 import { useApi } from '../Context/ApiContext'
 import Footer from '../Footer/Footer'
-import Header from '../Header/Header'
 import ReferalData from '../ReferalData/ReferalData'
 import TopBanner from '../TopBanner/TopBanner'
 import { useState } from 'react'
@@ -21,7 +20,7 @@ const Home = () => {
     setUserInput(e.target.value)
   }
   const filteredData = data?.filter((item) => {
-  const name = item.name || item.Name || "";
+  const name = item.name || "";
   return name.toLowerCase().includes(userInput.toLowerCase());
   });
 
@@ -29,7 +28,6 @@ const Home = () => {
 
   return (
     <div>
-      <Header/>
       <TopBanner searchinput={searchInput} userinput={userInput}/>
       <Banner/>
       <ReferalData data={currentData} currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPages}/>
