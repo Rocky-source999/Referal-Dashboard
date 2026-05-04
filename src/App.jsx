@@ -3,16 +3,19 @@ import { Routes, Route } from "react-router-dom"
 import Home from './components/Home/Home'
 import NotFound from './components/NotFound/NotFound'
 import AboutUs from './components/AboutUs/AboutUs'
-import Header from './components/Header/Header'
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import Login from './components/Login/Login'
 
 function App() {
   
   return (
     <div className='h-full'>
-      <Header/>
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/about' element={<AboutUs/>} />
+        <Route path='/login' element={<Login/>}/>
+        <Route element={<ProtectedRoute/>}>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/about' element={<AboutUs/>} />
+        </Route>
         <Route path="*" element={<NotFound/>} />
       </Routes>
     </div>
