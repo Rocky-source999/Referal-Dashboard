@@ -1,11 +1,10 @@
 import { useState } from "react"
-import { replace, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import './Login.css'
 
 const Login = () => {
     const[username,setUsername]=useState("")
     const[password,setPassword]=useState("")
-    const[errorMsg,setErrorMsg]=useState("")
     const navigate=useNavigate()
 
     const onChangePassword=(event)=>{
@@ -58,7 +57,7 @@ const Login = () => {
     const url='https://apis.ccbp.in/login'
     const userDetails={username,password}
     const options={
-        method:"post",
+        method:"POST",
         body:JSON.stringify(userDetails),
     }
     const response=await fetch(url,options)
@@ -67,9 +66,6 @@ const Login = () => {
 
     if(response.ok===true){
         onSubmitSuccess()
-    }
-    else{
-        setErrorMsg(data.error_msg)
     }
   }
 

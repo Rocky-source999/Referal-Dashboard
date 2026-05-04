@@ -1,21 +1,14 @@
 import { FaSearch } from "react-icons/fa"
 import { IoMdNotificationsOutline } from "react-icons/io"
-import { useEffect, useRef } from "react"
 import "./TopBanner.css"
 import { useNavigate } from "react-router-dom"
 
 const TopBanner = ({ searchinput, userinput }) => {
-  const inputRef = useRef(null)
   const navigate=useNavigate()
-
-  useEffect(() => {
-    inputRef.current.focus()
-  }, [])
 
   const handleChange=(event)=>{
     const value=event.target.value;
     if(value==="login"){
-      localStorage.removeItem('isLogin')
       navigate('/login',{replace:true})
     }
   }
@@ -26,7 +19,7 @@ const TopBanner = ({ searchinput, userinput }) => {
         <h1 className="font-bold text-2xl text-gray-500">Referal Dashboard</h1>
         <div className="search-cont flex items-center gap-1">
           <FaSearch className="icon h-6 w-6 text-blue-800 stroke-3 hover:scale-110"/>
-          <input type="search" placeholder="search here..." ref={inputRef} value={userinput} onChange={searchinput}/>
+          <input type="search" placeholder="search here..." value={userinput} onChange={searchinput}/>
         </div>
       </div>
       <div className="flex items-center gap-5">
