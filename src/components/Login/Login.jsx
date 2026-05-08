@@ -26,7 +26,7 @@ const Login = () => {
         className="password-input-field"
         value={password}
         onChange={onChangePassword}
-        placeholder="Password"
+        placeholder="rahul@2021"
       />
     </>
   )
@@ -42,7 +42,7 @@ const Login = () => {
         className="username-input-field"
         value={username}
         onChange={onChangeUsername}
-        placeholder="Username"
+        placeholder="rahul"
       />
     </>
   )
