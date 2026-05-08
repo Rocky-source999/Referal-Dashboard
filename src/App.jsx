@@ -6,10 +6,15 @@ import AboutUs from './components/AboutUs/AboutUs'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import Login from './components/Login/Login'
 import Header from './components/Header/Header'
+import { useEffect } from 'react'
 
 function App() {
   const location=useLocation()
     const hide=location.pathname!=='/login'
+
+    useEffect(()=>{
+      localStorage.removeItem('isLogin')
+    },[])
   
   return (
     <div className='h-full'>

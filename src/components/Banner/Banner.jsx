@@ -7,11 +7,17 @@ const Banner = () => {
   const [linkCopied, setLinkCopied] = useState(false);
   const [codeCopied, setCodeCopied] = useState(false);
 
-  const copyToClipboard = (text, setLinkCopied) => {
+  const copyLink = (referralLink, setLinkCopied) => {
     setLinkCopied(true);
-    navigator.clipboard.writeText(text);
+    navigator.clipboard.writeText(referralLink);
     setTimeout(() => setLinkCopied(false), 1000);
-  }; 
+  };
+  
+  const copyCode = (referralCode, setCodeCopied) => {
+    setCodeCopied(true);
+    navigator.clipboard.writeText(referralCode);
+    setTimeout(() => setCodeCopied(false), 1000);
+  };
 
   return (
     <div className="mt-20 px-12 mb-10">
@@ -97,7 +103,7 @@ const Banner = () => {
             <p className="font-bold text-lg text-gray-600">Your Referal Link</p>
             <div className="referal-code-copy">
                 <input type='search' value={referralLink} readOnly/>
-                <button className={`${linkCopied?"bg-green-500": "bg-blue-500"}`} onClick={()=>copyToClipboard(referralLink,setLinkCopied)}>
+                <button className={`${linkCopied?"bg-green-500": "bg-blue-500"}`} onClick={()=>copyLink(referralLink,setLinkCopied)}>
                   {linkCopied?"Copied!":"Copy"}
                 </button>
             </div>
@@ -106,7 +112,7 @@ const Banner = () => {
             <p className="font-bold text-lg text-gray-600">Your Referal Code</p>
             <div className="referal-code-copy">
                 <input type='search' value={referralCode} readOnly/>
-                <button className={`${codeCopied?"bg-green-500": "bg-blue-500"}`} onClick={()=>copyToClipboard(referralCode,setCodeCopied)}>
+                <button className={`${codeCopied?"bg-green-500": "bg-blue-500"}`} onClick={()=>copyCode(referralCode,setCodeCopied)}>
                   {codeCopied?"Copied!":"Copy"}
                 </button>
             </div>

@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom"
 import "./Header.css"
+import { useNavigate } from "react-router-dom"
 
 const Header = () => {
+  const navigate=useNavigate()
+  
+    const handleChange=()=>{
+      navigate('/login',{replace:true})
+      localStorage.removeItem('isLogin')
+    }
+
   return (
     <div className="head-cont px-2 flex justify-between items-center bg-gradient-to-r from-orange-500 via-blue-500 to-red-500 h-16 text-white">
         <div className="flex items-center">
@@ -15,7 +23,7 @@ const Header = () => {
             <Link to="/projects"><li>Projects</li></Link>
             <Link to="/contact"><li>Contact</li></Link>
         </ul>
-        <button>Try for free</button>
+        <button onClick={handleChange}>Try for free</button>
     </div>
   )
 }

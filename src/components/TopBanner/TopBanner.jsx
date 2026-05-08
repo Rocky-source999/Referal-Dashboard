@@ -1,17 +1,8 @@
 import { FaSearch } from "react-icons/fa"
 import { IoMdNotificationsOutline } from "react-icons/io"
 import "./TopBanner.css"
-import { useNavigate } from "react-router-dom"
 
 const TopBanner = ({ searchinput, userinput }) => {
-  const navigate=useNavigate()
-
-  const handleChange=(event)=>{
-    const value=event.target.value;
-    if(value==="login"){
-      navigate('/login',{replace:true})
-    }
-  }
 
   return (
     <div className="flex items-center justify-between mt-4 px-6">
@@ -29,10 +20,10 @@ const TopBanner = ({ searchinput, userinput }) => {
             <img src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg" alt="man" className="h-10 w-10"/>
             <div>
                 <p>Name</p>
-                <select onChange={handleChange}>
-                    <option value="">Admin</option>
-                    <option value="student">Student</option>
-                    <option value="login">Log Out</option>
+                <select>
+                    <option>Admin</option>
+                    <option>Student</option>
+                    <option>Log Out</option>
                 </select>
             </div>
         </div>
