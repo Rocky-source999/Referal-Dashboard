@@ -37,7 +37,6 @@ const ReferalData = ({ data, currentPage, setCurrentPage, totalPages }) => {
             <button className='page-button' onClick={() => handlePreviouPage(currentPage)}>
                 Prev
             </button>
-            {/* Page Numbers */}
             {[...Array(totalPages)].map((_,i) => (
             <button key={i} onClick={() => setCurrentPage(i + 1)} className='numbers' 
             style={{fontWeight: currentPage === i + 1 ? "bold" : "normal"}}>

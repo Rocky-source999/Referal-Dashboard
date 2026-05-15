@@ -7,12 +7,12 @@ const Login = () => {
     const[password,setPassword]=useState("")
     const navigate=useNavigate()
 
-    const onChangePassword=(event)=>{
-        setPassword(event.target.value)
-    }
-
     const onChangeUsername=(event)=>{
         setUsername(event.target.value)
+    }
+
+    const onChangePassword=(event)=>{
+        setPassword(event.target.value)
     }
 
     const renderPasswordField = () => (
@@ -62,7 +62,6 @@ const Login = () => {
     }
     const response=await fetch(url,options)
     const fetched=await response.json()
-    console.log(fetched)
 
     if(response.ok===true){
         onSubmitSuccess()
