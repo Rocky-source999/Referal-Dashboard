@@ -5,7 +5,6 @@ import ReferalData from '../ReferalData/ReferalData'
 import TopBanner from '../TopBanner/TopBanner'
 import { useState } from 'react'
 
-
 const Home = () => {
   const data = useApi()
   const[userInput, setUserInput]=useState("")
@@ -15,10 +14,10 @@ const Home = () => {
   const firstIndex = lastIndex - rowsPerPage;
   const totalPages = Math.ceil(data.length / rowsPerPage);
   
-
   const searchInput=(e)=>{
     setUserInput(e.target.value)
   }
+  
   const filteredData = data?.filter((item) => {
   const name = item.name || "";
   return name.toLowerCase().includes(userInput.toLowerCase());

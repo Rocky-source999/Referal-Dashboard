@@ -7,12 +7,11 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import Login from './components/Login/Login'
 import Header from './components/Header/Header'
 
-
 function App() {
+  
   const location=useLocation()
     const hide=location.pathname!=='/login'
 
-  
   return (
     <div className='h-full'>
       {hide && <Header/>}
